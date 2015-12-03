@@ -1,12 +1,23 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:id="@+id/LayoutMensajePreEncuesta"
     tools:context="net.allacalle.android.prototipourgencyassist25.MensajePreEncuesta">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+    <TextView android:text="Bienvenido a ERA (Emergency Assistance)!!!
+
+Esta App está pensada para ofrecerte un acceso rápido y sencillo a las fórmulas que más utilices durante tu turno de trabajo.
+
+\nPara personalizarla a tus necesidades, necesitamos que completes un pequeño cuestionario, donde se mostrarán un conjunto de fórrmulas para que indiques la frecuencia con la que las usas.
+
+El sistema utilizado es similar al del semáforo, por lo que deberás marcar el rojo en las fórmulas que más utilices, amarillo en las que la frecuencia de uso sea intermedia y verde en las que consultes sólo de vez en cuando.
+
+No olvides que en cualquier momento podrás modificar estas preferencias accediendo al menú Configuracion (el icono del engranaje arriba).
+
+\nMuchas gracias por elegir ERA (Emergency Assitance)." android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</RelativeLayout>
+</LinearLayout>

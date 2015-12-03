@@ -24,7 +24,7 @@ public class ListadoFormulas extends ActionBarActivity {
         //Recuperamos la información pasada en el intent
         Bundle bundle = this.getIntent().getExtras();
         //Construimos el mensaje a mostrar
-        final String prioridadRecibida = bundle.getString("Uso");
+        final String prioridadRecibida = bundle.getString("Prioridad");
 
         LinearLayout lm = (LinearLayout) findViewById(R.id.LytContenedor);
         TextView TextoInformativo = new TextView(this);
@@ -65,13 +65,13 @@ public class ListadoFormulas extends ActionBarActivity {
         drawable.setStroke(5, Color.parseColor("#BDBDBD") );
 
         switch (prioridadRecibida){
-            case "Alto":
+            case "Alta":
                 drawable.setColor(Color.parseColor("#FFCDD2"));
                 break;
-            case "Medio":
+            case "Media":
                 drawable.setColor(Color.parseColor("#FFF59D"));
                 break;
-            case "Bajo":
+            case "Baja":
                 drawable.setColor(Color.parseColor("#CCFF90"));
                 break;
         }
@@ -83,19 +83,13 @@ public class ListadoFormulas extends ActionBarActivity {
 
             boton.setText(abreviaturas[i]);
             boton.setBackgroundDrawable(drawable);
-
             lm.addView(boton);
-        }
-
-
-            /*
             boton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     //Creamos el Intent
                     Intent intent =
-                            new Intent(FormulasPrioridad.this, Detalles.class);
-                    //new Intent(MainActivity.this, ConfiguracionPrioridad.class);
+                            new Intent(ListadoFormulas.this, DetallesFormula.class);
 
                     //Creamos la información a pasar entre actividades
                     Bundle b = new Bundle();
@@ -110,8 +104,8 @@ public class ListadoFormulas extends ActionBarActivity {
                 }
             });
 
-            */
 
+        }
 
 
 

@@ -58,7 +58,7 @@
             android:layout_below="@id/header"
             >
             <Button
-                android:id="@+id/BtnAlto"
+                android:id="@+id/BtnAlta"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:background="#FFCDD2"
@@ -68,7 +68,7 @@
 
 
             <Button
-                android:id="@+id/BtnMedio"
+                android:id="@+id/BtnMedia"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:background="#FFF59D"
@@ -78,7 +78,7 @@
 
 
             <Button
-                android:id="@+id/BtnBajo"
+                android:id="@+id/BtnBaja"
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:background="#CCFF90"

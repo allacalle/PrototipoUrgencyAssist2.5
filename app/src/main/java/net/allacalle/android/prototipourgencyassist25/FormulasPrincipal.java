@@ -18,13 +18,13 @@ public class FormulasPrincipal extends ActionBarActivity {
 
         //Buscamos nuestros botones de Alto,Medio, Bajo
 
-        Button BtnAlto = (Button) findViewById(R.id.BtnAlto);
-        Button BtnMedio = (Button) findViewById(R.id.BtnMedio);
-        Button BtnBajo = (Button) findViewById(R.id.BtnBajo);
+        Button BtnAlta = (Button) findViewById(R.id.BtnAlta);
+        Button BtnMedia = (Button) findViewById(R.id.BtnMedia);
+        Button BtnBaja = (Button) findViewById(R.id.BtnBaja);
 
 
         //Al pulsar uno de estos botones cargara la actividad listado_formulas con el valor de cada boton. (Alto,Medio,Bajo)
-        BtnAlto.setOnClickListener(new View.OnClickListener() {
+        BtnAlta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Creamos el Intent
@@ -33,7 +33,7 @@ public class FormulasPrincipal extends ActionBarActivity {
 
                 //Creamos la información a pasar entre actividades
                 Bundle b = new Bundle();
-                b.putString("Uso", "Alto");
+                b.putString("Prioridad", "Alta");
 
                 //Añadimos la información al intent
                 intent.putExtras(b);
@@ -44,7 +44,7 @@ public class FormulasPrincipal extends ActionBarActivity {
             }
         });
 
-        BtnMedio.setOnClickListener(new View.OnClickListener() {
+        BtnMedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Creamos el Intent
@@ -53,7 +53,7 @@ public class FormulasPrincipal extends ActionBarActivity {
 
                 //Creamos la información a pasar entre actividades
                 Bundle b = new Bundle();
-                b.putString("Uso", "Medio");
+                b.putString("Prioridad", "Media");
 
                 //Añadimos la información al intent
                 intent.putExtras(b);
@@ -64,7 +64,7 @@ public class FormulasPrincipal extends ActionBarActivity {
             }
         });
 
-        BtnBajo.setOnClickListener(new View.OnClickListener() {
+        BtnBaja.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Creamos el Intent
@@ -73,7 +73,7 @@ public class FormulasPrincipal extends ActionBarActivity {
 
                 //Creamos la información a pasar entre actividades
                 Bundle b = new Bundle();
-                b.putString("Uso", "Bajo");
+                b.putString("Prioridad", "Baja");
 
                 //Añadimos la información al intent
                 intent.putExtras(b);

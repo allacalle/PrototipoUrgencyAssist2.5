@@ -35,7 +35,7 @@ public class Formula
     {
 
         FormulasSQLiteHelper usdbh =
-                new FormulasSQLiteHelper(context ,"DBPrueba", null, 1);
+                new FormulasSQLiteHelper(context ,"DbEra", null, 1);
         SQLiteDatabase db = usdbh.getReadableDatabase();
 
         //Inicializo el curso para recorrer las formulas
@@ -180,7 +180,7 @@ public class Formula
     public void setResultado(Context context)
     {
         FormulasSQLiteHelper usdbh =
-                new FormulasSQLiteHelper(context ,"DBPrueba", null, 1);
+                new FormulasSQLiteHelper(context ,"DbEra", null, 1);
         SQLiteDatabase db = usdbh.getReadableDatabase();
         Parametro parametroResultado = new Parametro();
         //this.resultado = resultado;
