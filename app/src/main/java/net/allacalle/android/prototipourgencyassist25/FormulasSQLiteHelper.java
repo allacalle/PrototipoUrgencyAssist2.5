@@ -11,6 +11,7 @@ public class FormulasSQLiteHelper extends SQLiteOpenHelper {
     String sqlCreateParametro = "CREATE TABLE Parametros (IdParametro INTEGER, NombreParametro TEXT, IdFormula Integer, TipoParametro TEXT, Medida TEXT) ";
     String sqlCreateCriterioPuntuacion = "CREATE TABLE CriterioPuntuacion(IdCriterioPuntuacion INTEGER, IdParametro INTEGER, Criterio TEXT, Puntuacion TEXT)";
     String sqlCreatePrioridad = "CREATE TABLE Prioridad(IdPrioridad INTEGER, IdFormula INTEGER, Tipo TEXT)";
+    String sqlCreateRecientes = "CREATE TABLE Recientes(IdRecientes INTEGER, IdFormula INTEGER, Fecha TEXT)";
 
 
 
@@ -28,6 +29,7 @@ public class FormulasSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL(sqlCreateParametro);
         db.execSQL(sqlCreateCriterioPuntuacion);
         db.execSQL(sqlCreatePrioridad);
+        db.execSQL(sqlCreateRecientes);
         //Este comentario deberia borrarse
     }
 
@@ -39,6 +41,7 @@ public class FormulasSQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Parametros");
         db.execSQL("DROP TABLE IF EXISTS CriterioPuntuacion");
         db.execSQL("DROP TABLE IF EXISTS Prioridad");
+        db.execSQL("DROP TABLE IF EXISTS Recientes");
 
         onCreate(db);
 
