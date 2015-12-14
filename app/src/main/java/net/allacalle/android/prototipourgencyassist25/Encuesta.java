@@ -67,7 +67,7 @@ public class Encuesta extends ActionBarActivity {
             rg.setOrientation(RadioGroup.HORIZONTAL);
             RadioButton radial1 = new RadioButton(this);
             radial1.setId(j);
-            radial1.setBackgroundColor(Color.parseColor("#FFCDD2"));
+            radial1.setBackgroundColor(Color.parseColor("#FF8A80"));
             RadioButton radial2 = new RadioButton(this);
             radial2.setId(j+1);
             radial2.setBackgroundColor(Color.parseColor("#FFF59D"));

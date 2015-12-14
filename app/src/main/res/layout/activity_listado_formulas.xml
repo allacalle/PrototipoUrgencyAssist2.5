@@ -11,27 +11,12 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="#FC9"
+        android:orientation="horizontal"
         android:gravity="center" >
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            android:text="Formulas"
-            android:textColor="#000"
-            android:background="#9E9E9E"
-            />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:text="Recientes"
-            android:layout_weight="1"
-            android:textColor="#000"
-            android:background="#9E9E9E"
-            />
+
+
 
 
     </LinearLayout>
@@ -46,6 +31,9 @@
         android:gravity="center"
         android:orientation="vertical"
         >
+
+
+
     </LinearLayout>
 
     <!-- Scrollable Item below header and above footer -->

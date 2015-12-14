@@ -27,9 +27,28 @@ public class ListadoFormulas extends ActionBarActivity {
         final String prioridadRecibida = bundle.getString("Prioridad");
 
         LinearLayout lm = (LinearLayout) findViewById(R.id.LytContenedor);
+        //Creamos un objeto drawable para dibujar los botones.
+        GradientDrawable drawable = new GradientDrawable();
+        drawable.setShape(GradientDrawable.RECTANGLE);
+        drawable.setStroke(5, Color.parseColor("#BDBDBD") );
+        setTitle("ERA");
+
+        //Creamos un objeto drawable para dar formato a los elementos auxiliares.
+        GradientDrawable drawableExtra = new GradientDrawable();
+        drawableExtra.setShape(GradientDrawable.RECTANGLE);
+        drawableExtra.setStroke(5, Color.parseColor("#BDBDBD"));
+        drawableExtra.setColor(Color.parseColor("#9E9E9E"));
+
+
+        /*
+
         TextView TextoInformativo = new TextView(this);
-        TextoInformativo.setText("El uso de estas formulas sera " + prioridadRecibida );
+        TextoInformativo.setText(prioridadRecibida );
+        TextoInformativo.setTextSize(20);
+        TextoInformativo.setBackgroundDrawable(drawableExtra);
         lm.addView(TextoInformativo);
+
+        */
 
         //Abro la base de datos.
         FormulasSQLiteHelper usdbh =
@@ -59,14 +78,11 @@ public class ListadoFormulas extends ActionBarActivity {
             cursorFormula.close();
         }
 
-        //Creamos un objeto drawable para dibujar los botones.
-        GradientDrawable drawable = new GradientDrawable();
-        drawable.setShape(GradientDrawable.RECTANGLE);
-        drawable.setStroke(5, Color.parseColor("#BDBDBD") );
+
 
         switch (prioridadRecibida){
             case "Alta":
-                drawable.setColor(Color.parseColor("#FFCDD2"));
+                drawable.setColor(Color.parseColor("#FF8A80"));
                 break;
             case "Media":
                 drawable.setColor(Color.parseColor("#FFF59D"));
@@ -128,6 +144,13 @@ public class ListadoFormulas extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if ( id == R.id.action_Formulas )
+        {
+            Intent intent =
+                    new Intent(ListadoFormulas.this, FormulasPrincipal.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

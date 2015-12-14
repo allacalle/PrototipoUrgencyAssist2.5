@@ -3,13 +3,14 @@ package net.allacalle.android.prototipourgencyassist25;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 
-public class FormulasPrincipal extends ActionBarActivity {
+public class FormulasPrincipal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +22,8 @@ public class FormulasPrincipal extends ActionBarActivity {
         Button BtnAlta = (Button) findViewById(R.id.BtnAlta);
         Button BtnMedia = (Button) findViewById(R.id.BtnMedia);
         Button BtnBaja = (Button) findViewById(R.id.BtnBaja);
+
+        setTitle("ERA");
 
 
         //Al pulsar uno de estos botones cargara la actividad listado_formulas con el valor de cada boton. (Alto,Medio,Bajo)
@@ -109,6 +112,13 @@ public class FormulasPrincipal extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if ( id == R.id.action_Recientes )
+        {
+            Intent intent =
+                    new Intent(FormulasPrincipal.this, Recientes.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

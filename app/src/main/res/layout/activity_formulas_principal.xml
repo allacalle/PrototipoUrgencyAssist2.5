@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#C5CAE9"
     android:layout_height="match_parent" >
 
     <!-- Header aligned to top -->
@@ -11,27 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:background="#FC9"
+        android:orientation="vertical"
         android:gravity="center" >
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            android:text="Formulas"
-            android:textColor="#000"
-            android:background="#9E9E9E"
-            />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:text="Recientes"
-            android:layout_weight="1"
-            android:textColor="#000"
-            android:background="#9E9E9E"
-            />
 
 
     </LinearLayout>
@@ -60,9 +42,10 @@
             <Button
                 android:id="@+id/BtnAlta"
                 android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:background="#FFCDD2"
-                android:text="Alto"
+                android:layout_width="200dp"
+                android:layout_gravity="center"
+                android:background="@drawable/alta"
+                android:text="Alta"
                 android:layout_height="0dp">
             </Button>
 
@@ -70,9 +53,10 @@
             <Button
                 android:id="@+id/BtnMedia"
                 android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:background="#FFF59D"
-                android:text="Medio"
+                android:layout_width="200dp"
+                android:layout_gravity="center"
+                android:background="@drawable/media"
+                android:text="Media"
                 android:layout_height="0dp">
             </Button>
 
@@ -80,9 +64,10 @@
             <Button
                 android:id="@+id/BtnBaja"
                 android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:background="#CCFF90"
-                android:text="Bajo"
+                android:layout_width="200dp"
+                android:layout_gravity="center"
+                android:background="@drawable/baja"
+                android:text="Baja"
                 android:layout_height="0dp">
             </Button>
 

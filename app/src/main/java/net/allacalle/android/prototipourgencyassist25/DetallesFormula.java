@@ -22,7 +22,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -32,6 +34,7 @@ public class DetallesFormula extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_formula);
+        setTitle("ERA");
         //Recuperamos la información pasada en el intent
         Bundle bundle = this.getIntent().getExtras();
         //Construimos el mensaje a mostrar
@@ -39,13 +42,26 @@ public class DetallesFormula extends ActionBarActivity {
         //creamos el layout dinamico como pros!
         final LinearLayout lm = (LinearLayout) findViewById(R.id.LytContenedor);
 
+        //Creamos un objeto drawable para dar formato a los elementos auxiliares.
+        GradientDrawable drawableExtra = new GradientDrawable();
+        drawableExtra.setShape(GradientDrawable.RECTANGLE);
+        drawableExtra.setStroke(5, Color.parseColor("#BDBDBD"));
+        drawableExtra.setColor(Color.parseColor("#9E9E9E"));
+
+
+
+        Button botonAtras = (Button) findViewById(R.id.BtnAtras);
+        botonAtras.setText(valorRecibido);
+
+        /*
         //Creamos un linear layout para poner el nombre de la prioridad
         LinearLayout lFormula = new LinearLayout(this);
         TextView tituloFormula = new TextView(this);
+        tituloFormula.setBackgroundDrawable(drawableExtra);
         tituloFormula.setText(valorRecibido);
-        tituloFormula.setBackgroundColor(Color.parseColor("#E1BEE7"));
         lFormula.addView(tituloFormula);
         lm.addView(lFormula);
+        */
 
 
         // Para obtener el tipo de cada formula deberiamos movernos al cursor de cada formula y obtener el getString(1);
@@ -66,6 +82,7 @@ public class DetallesFormula extends ActionBarActivity {
         //Obtenemos la expresion de esa formula si la tiene sino simplemente obtendra null
         final String expresion = c.getString(2);
         c.close();
+        db.close();
         //Creamos la formula con la que trabajaremos
         final Formula formulaActual = new Formula(idFormula,getBaseContext());
 
@@ -175,7 +192,8 @@ public class DetallesFormula extends ActionBarActivity {
 
 
             Button botonGenerico = new Button(this);
-            botonGenerico.setText("Calcular formula");
+            botonGenerico.setBackgroundDrawable(drawableExtra);
+            botonGenerico.setText("Calcular");
             lm.addView(botonGenerico);
             final TextView mensaje = new TextView(this);
             lm.addView(mensaje);
@@ -352,6 +370,7 @@ public class DetallesFormula extends ActionBarActivity {
             //final int valor2 = allEds.size() ;
 
             Button botonEcuacion = new Button(this);
+            botonEcuacion.setBackgroundDrawable(drawableExtra);
             botonEcuacion.setText("Calcular formula");
             lm.addView(botonEcuacion);
             final TextView mensaje = new TextView(this);
@@ -396,6 +415,7 @@ public class DetallesFormula extends ActionBarActivity {
                             //expression.and(formulaActual.getParametro(i).getNombre(), formulaActual.getParametro(i).getValor());
                             valores = valores + formulaActual.getParametro(i).getValor() + ";" ;
                         }
+
                         //mensaje.setText(cadena);
                         Intent intent =
                                 new Intent(DetallesFormula.this, ResumenFormula.class);
@@ -442,6 +462,13 @@ public class DetallesFormula extends ActionBarActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        if ( id == R.id.action_Formulas )
+        {
+            Intent intent =
+                    new Intent(DetallesFormula.this, FormulasPrincipal.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
